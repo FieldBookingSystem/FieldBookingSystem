@@ -1,0 +1,19 @@
+{
+  "name": "fieldbookingsystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FieldBookingSystem/FieldBookingSystem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FieldBookingSystem/FieldBookingSystem/issues"
+  },
+  "homepage": "https://github.com/FieldBookingSystem/FieldBookingSystem#readme"
+}
