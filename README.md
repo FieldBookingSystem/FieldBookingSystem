@@ -10,3 +10,9 @@ https://open.ottawa.ca/datasets/sports-fields/explore?location=45.376843%2C-75.5
 https://www.npmjs.com/package/react-google-login
 
 https://developers.google.com/maps/documentation/javascript/earthquakes
+
+
+Booking Routes - Alicia 
+Fields Routes - Jodi
+Coach Routes - Slav 
+Home Routes - Mark 
