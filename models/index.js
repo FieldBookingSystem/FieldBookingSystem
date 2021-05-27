@@ -1,7 +1,8 @@
-const User = require('./User');
-const Project = require('./Project');
+const Booking = require('./Booking');
+const Coach = require('./Coach');
+const Fields = require('./Fields');
 
-User.hasMany(Project, {
+Coach.hasMany(Booking, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
