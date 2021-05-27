@@ -3,12 +3,12 @@ const Coach = require('./Coach');
 const Fields = require('./Fields');
 
 Coach.hasMany(Booking, {
-  foreignKey: 'user_id',
+  foreignKey: 'coach_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+Booking.belongsTo(Fields, {
+  foreignKey: 'field_id'
 });
 
-module.exports = { User, Project };
+module.exports = { Booking, Coach, Fields };
