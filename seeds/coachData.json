@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Sal",
+      "email": "sal@hotmail.com",
+      "password": "password12345",
+      "postalCode": "K1V3K8"
+    },
+    {
+      "name": "Bernard",
+      "email": "bernard@gmail.com",
+      "password": "password12345",
+      "postalCode": "K4K2M9"
+    },
+    {
+      "name": "George",
+      "email": "George123@gmail.com",
+      "password": "password12345",
+      "postalCode": "K2K7G3"
+    }
+  ]
+  
