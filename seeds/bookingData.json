@@ -1,20 +1,20 @@
 [
     {
-      "name": "Sal",
-      "email": "sal@hotmail.com",
-      "password": "password12345",
-      "postalCode": "K1V3K8"
+      "field_id": "3",
+      "team_name": "Carleton Ravens Ladies Soccer",
+      "date": "2021-07-07",
+      "time_slot": "3"
     },
     {
-      "name": "Bernard",
-      "email": "bernard@gmail.com",
-      "password": "password12345",
-      "postalCode": "K4K2M9"
+        "field_id": "1",
+        "team_name": "St. Joe High school",
+        "date": "2021-07-09",
+        "time_slot": "2"
     },
     {
-      "name": "George",
-      "email": "George123@gmail.com",
-      "password": "password12345",
-      "postalCode": "K2K7G3"
+        "field_id": "2",
+        "team_name": "Tim Bits T-Ball",
+        "date": "2021-07-10",
+        "time_slot": "1"
     }
   ]
