@@ -1,0 +1,20 @@
+[
+    {
+      "field_id": "3",
+      "team_name": "Carleton Ravens Ladies Soccer",
+      "date": "2021-07-07",
+      "time_slot": "3"
+    },
+    {
+        "field_id": "1",
+        "team_name": "St. Joe High school",
+        "date": "2021-07-09",
+        "time_slot": "2"
+    },
+    {
+        "field_id": "2",
+        "team_name": "Tim Bits T-Ball",
+        "date": "2021-07-10",
+        "time_slot": "1"
+    }
+  ]
