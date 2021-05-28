@@ -15,9 +15,6 @@
   "bugs": {
     "url": "https://github.com/FieldBookingSystem/FieldBookingSystem/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/FieldBookingSystem/FieldBookingSystem#readme"
-=======
   "homepage": "https://github.com/FieldBookingSystem/FieldBookingSystem#readme",
   "dependencies": {
     "auth": "0.0.9",
@@ -28,5 +25,4 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"
   }
->>>>>>> 1c832aaf250232b18fd077e4dbfc8e4eb238879c
 }
