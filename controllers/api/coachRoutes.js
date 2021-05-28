@@ -4,46 +4,41 @@ const withAuth = require('./../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const coachData = await coach.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+    // Get all models and JOIN with user data
+    const coachData = await Coach.findAll({
+      include: [{model: Booking }, { model: Fields }],  
     });
 
     // Serialize data so the template can read it
     const Coach = coachData.map((Coach) => Coach.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      Coach, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', { //coachpage
+      Coach,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
+// GET a single coach
 router.get('/Coach/:id', async (req, res) => {
   try {
     const coachData = await Coach.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      include: [{model: Booking }, { model: Fields }],  
     });
 
-    const Coach = coachData.get({ plain: true });
+    if (!coachData) {
+      res.status(404).json({ message: 'No coach found with that id!' });
+      return;
+    }
+    // const Coach = coachData.get({ plain: true });
 
-    res.render('Coach', {
-      ...Coach,
-      logged_in: req.session.logged_in
-    });
+    // res.render('Coach', {
+    //   ...Coach,
+    //   logged_in: req.session.logged_in
+    // });
+    res.status(200).json(coachData);
   } catch (err) {
     res.status(500).json(err);
   }
