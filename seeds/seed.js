@@ -1,23 +1,25 @@
 const sequelize = require('../config/connection');
-const { User, Project } = require('../models');
+const { Coach, Booking, Fields } = require('../models');
 
-const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+const coachData = require('./coachData.json');
+const bookingData = require('./bookingData.json');
+const fieldsData = require('./fieldsData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  const coach = await Coach.bulkCreate(coachData);
 
-  for (const project of projectData) {
-    await Project.create({
-      ...project,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const booking = await Booking.bulkCreate(bookingData);
+
+  const fields = await Fields.bulkCreate(fieldsData);
+
+  // for (const booking of bookingData) {
+  //   await Booking.create({
+  //     ...booking,
+  //     coach_id: coach[Math.floor(Math.random() * users.length)].id,
+  //   });
+  // }
 
   process.exit(0);
 };
