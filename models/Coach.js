@@ -30,7 +30,7 @@ Coach.init(
       validate: {
         len: [8],
       },
-      },
+    },
 
       postalcode: {
         type: DataTypes.STRING,

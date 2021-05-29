@@ -8,11 +8,11 @@ const fieldsData = require('./fieldsData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const coach = await Coach.bulkCreate(coachData);
+  await Coach.bulkCreate(coachData);
 
-  const booking = await Booking.bulkCreate(bookingData);
+  await Fields.bulkCreate(fieldsData);
 
-  const fields = await Fields.bulkCreate(fieldsData);
+  await Booking.bulkCreate(bookingData);
 
   // for (const booking of bookingData) {
   //   await Booking.create({
