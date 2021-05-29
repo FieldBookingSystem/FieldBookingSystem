@@ -71,4 +71,18 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+//POST A NEW COACH--------------- 
+router.post('/', async (req, res) => {
+  try {
+    const newCoach = await Coach.create({
+      ...req.body,
+      // user_id: req.session.user_id,
+    });
+
+    res.status(200).json(newCoach);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
