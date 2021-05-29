@@ -1,0 +1,18 @@
+.timesbooked {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+.removehover {
+    color:#000000;
+}
+
+.removehover:hover {
+    color: black;
+}
+
+.view {
+    margin: 0;
+    padding: 0;
+}
