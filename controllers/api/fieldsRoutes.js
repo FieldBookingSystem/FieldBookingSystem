@@ -60,7 +60,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-// this finction checks if the user is logged in. and if they are not directs them to a log in page
+// this function checks if the user is logged in. and if they are not directs them to a log in page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
