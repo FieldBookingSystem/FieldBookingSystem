@@ -1,24 +1,60 @@
-<!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{project.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
+<!-- Files can be broken into handle bars later. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ottawa field Booking</title>
+        <!-- Pure Grid System https://purecss.io/grids/ -->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/base-min.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-min.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="booking.css">
+    </head>
+    <body>
+        <!-- header will stay about the same for every page -->
+        <header>
+        <h1 class="pure-u-md-17-24 pure-u-sm-1" >Ottawa field Booking</h1>
+        <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#">Sign Up</div>
+        <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#">Log In</div>
+        </header>
+        <nav>
+            <h5><a href="Booking Page.html">View Bookings</a></h5>
+            <h5><a href="view.html">Book a field</a></h5>
+        </nav>
+        <section class="container pure-u-md-24-24">
+            <!-- this is where stuff should. -->
+            <!-- shearch bar kinda like what the one the air bnb website.  -->
+            <div class="pure-u-md-17-24 searchbar">
+                <h4>Date</h4>
+                <h4>Address</h4>
+                <h4>other data?</h4>
+                <div class="search"> search </div>
+            </div>
+
+            <!-- We might have this appear after a user selects a date and put in an address of some kind. -->
+            <!-- Form for data  -->
+            <form class="pure-u-md-17-24 pure-u-sm-1">
+                <h2>Book a field</h2>
+                <input placeholder="team name">
+                <!-- drop down for fields -->
+                <label for="fieldlist">Field</label>
+                <select>
+                    <!-- loop  to bild an option for each feild that is available -->
+                    <option>field one</option>
+                    <option>field two</option>
+                    <option>field three</option>
+                </select>
+                <!-- time slots. We might need a way to check if another team has the selected field for  
+                    for some time for the selected feild and remove those times from the display -->
+                <label class="times" for="startTime">time slots</label>
+                <select class="times">
+                    <option>time one</option>
+                    <option>time two</option>
+                    <option>time three</option>
+                </select>
+                <div class="submitBtn pure-u-md-20-24"> Book This Field </div>
+            </form>
+    </section>
+    </body>
+    <script src="index.js"></script>
+</html>
