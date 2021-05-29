@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// gets one feild by it's id
+// gets one field by it's id
 router.get('/:id', async (req, res) => {
   try {
     const fieldData = await Fields.findByPk(req.params.id);
