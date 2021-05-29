@@ -8,7 +8,7 @@ function getApi() {
       .then(function (response) {
         console.log(response);
         if (response.status === 200) {
-          console(response)
+          response.json().then(data  => console.log(data))
         }
         return response.json();
     });
