@@ -6,8 +6,8 @@ const withAuth = require('../../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const fieldData = await Fields.findAll();
-    //res.status(200).json(fieldData);
-    res.render('homepage');
+    res.status(200).json(fieldData);
+    //res.render('homepage');
 
     // // Serialize data so the template can read it
     // const projects = projectData.map((project) => project.get({ plain: true }));
