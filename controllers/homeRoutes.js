@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    res.render('main');
+    res.render('layouts/main');
 // const fieldData = await Fields.findAll();   res.render('homepage');
 
     // Get all projects and JOIN with user data
