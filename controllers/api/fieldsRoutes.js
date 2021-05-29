@@ -1,54 +1,45 @@
 const router = require('express').Router();
-const { Project, User } = require('../../models');
+const { Fields, Booking } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// gets all the fields data I think this can be used to build the 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const fieldData = await Fields.findAll();
+    //res.status(200).json(fieldData);
+    res.render('homepage');
 
-    // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    // // Serialize data so the template can read it
+    // const projects = projectData.map((project) => project.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
-    });
+    // // Pass serialized data and session flag into template
+    // res.render('homepage', { 
+    //   projects, 
+    //   logged_in: req.session.logged_in 
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+// gets one feild by it's id
+router.get('/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const fieldData = await Fields.findByPk(req.params.id);
+    res.status(200).json(fieldData)
+    // const project = projectData.get({ plain: true });
 
-    const project = projectData.get({ plain: true });
-
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
-    });
+    // res.render('project', {
+    //   ...project,
+    //   logged_in: req.session.logged_in
+    // });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// This Functions purpose is to render a users profile I don't know if 
+// we will need this one.
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
@@ -69,6 +60,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+// this finction checks if the user is logged in. and if they are not directs them to a log in page
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
