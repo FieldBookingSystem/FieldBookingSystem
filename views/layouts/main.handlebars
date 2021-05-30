@@ -23,6 +23,19 @@
         <!-- stuff in the section tag is what will likely change from page to page -->
         <section class="container">
             {{{body}}}
+             {{#each fields as |field| }}
+             <div class="row mb-4 project">
+            <div class="col-md-5">
+                <h2>
+                {{field.name}}
+                 {{field.id}}
+                 {{field.address}}
+                </h2>
+                
+            </div>
+            
+            </div>
+            {{/each}}
     </section>
     </body>
    <script src="./js/index.js"></script>
