@@ -1,9 +1,10 @@
-console.log("this is working")
-
+console.log("this is working");
+const doc = document.getElementById("searchBtn");
+const cont = document.getElementsByClassName("container2");
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
-function getApi() {
+function getfields() {
     fetch("/api/fields")
       .then(function (response) {
         console.log(response);
@@ -14,4 +15,53 @@ function getApi() {
     });
   }
 
-getApi();
+//getApi();
+
+
+
+const searchBtnHandler = async (event) => {
+  event.preventDefault();
+  //getfields();
+ // console.log(typeof cont);
+  console.log("test");
+  document.location.replace('/fieldDisplay');
+ // cont.innerText = `{{> field-details}}`;
+  // const fieldString = ` {{#each fields as |field| }}
+  // <div class="row mb-4 project">
+  //     <div class="col-md-5">
+  //         <h2>
+  //             {{field.name}}
+  //             {{field.id}}
+  //             {{field.address}}
+  //         </h2>
+              
+  //     </div>
+  // </div>
+  // {{/each}}`;
+
+  // doc.body.insertAdjacentHTML("beforeend", `{{>field-details}}`
+  //);  
+  // Collect values from the login form
+ // const email = document.querySelector('#email-login').value.trim();
+ // const password = document.querySelector('#password-login').value.trim();
+ 
+  // if (email && password) {
+  //   // Send a POST request to the API endpoint
+  //   const response = await fetch('/api/users/login', {
+  //     method: 'POST',
+  //     body: JSON.stringify({ email, password }),
+  //     headers: { 'Content-Type': 'application/json' },
+  //   });
+
+  //   if (response.ok) {
+  //     // If successful, redirect the browser to the profile page
+  //     document.location.replace('/profile');
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // }
+};
+
+
+
+doc.addEventListener('click', searchBtnHandler);

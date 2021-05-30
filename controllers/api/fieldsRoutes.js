@@ -7,16 +7,11 @@ router.get('/', async (req, res) => {
   try {
     const fieldData = await Fields.findAll();
     res.status(200).json(fieldData);
-    //res.render('homepage');
-
-    // // Serialize data so the template can read it
-    // const projects = projectData.map((project) => project.get({ plain: true }));
-
-    // // Pass serialized data and session flag into template
-    // res.render('homepage', { 
-    //   projects, 
-    //   logged_in: req.session.logged_in 
-    // });
+    // const fields = fieldData.map((field) => field.get({ plain: true }));
+    // res.render('field-details', { 
+    //     fields,
+    //    // logged_in: req.session.logged_in 
+    //   });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,6 +28,23 @@ router.get('/:id', async (req, res) => {
     //   ...project,
     //   logged_in: req.session.logged_in
     // });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/fieldDisplay', async (req, res) => {
+  try {
+    const fieldData = await Fields.findAll();
+   
+   const fields = fieldData.map((field) => field.get({ plain: true }));
+    console.log("fields");
+    //res.status(200).json(fields);
+     res.render('field-details', { 
+         fields,
+       // logged_in: req.session.logged_in 
+       });
   } catch (err) {
     res.status(500).json(err);
   }

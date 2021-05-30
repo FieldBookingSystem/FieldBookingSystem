@@ -33,6 +33,24 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+
+router.get('/fieldDisplay', async (req, res) => {
+  try {
+    const fieldData = await Fields.findAll();
+   
+   const fields = fieldData.map((field) => field.get({ plain: true }));
+    console.log("fields");
+    //res.status(200).json(fields);
+     res.render('field-details', { 
+         fields,
+       // logged_in: req.session.logged_in 
+       });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // router.get('/project/:id', async (req, res) => {
 //   try {
 //     const projectData = await Project.findByPk(req.params.id, {

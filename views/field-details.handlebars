@@ -1,5 +1,5 @@
 
-        {{!-- <section class="container pure-u-md-24-24">
+ {{!-- <section class="container pure-u-md-24-24">
             <!-- this is where stuff should. -->
             <!-- shearch bar kinda like what the one the air bnb website.  -->
             <div class="pure-u-md-17-24 searchbar">
@@ -34,3 +34,29 @@
                 <div class="submitBtn pure-u-md-20-24"> Book This Field </div>
             </form>
     </section> --}}
+ <!-- stuff in the section tag is what will likely change from page to page -->
+  <section class="card">
+  <!-- The contents of this card links to the gallery page using the gallery ID -->
+  {{{body}}}
+  {{#each fields as |field| }}
+    <div class="row mb-4 project">
+        <div class="col-md-5">
+            <h2>
+                {{field.name}}
+                {{field.id}}
+                {{field.address}}
+            </h2>
+                
+        </div>
+    </div>
+    {{/each}}
+</section>
+       
+    </body>
+   <script src="./js/index.js"></script>
+</html>
+
+
+
+
+
