@@ -2,12 +2,12 @@ const Booking = require('./Booking');
 const Coach = require('./Coach');
 const Fields = require('./Fields');
 
-Coach.hasMany(Booking, {
+Coach.belongsToMany(Booking, {
   foreignKey: 'coach_id',
   onDelete: 'CASCADE'
 });
 
-Fields.hasMany(Booking, {
+Fields.belongsToMany(Booking, {
   through: Fields,
   foreignKey: 'field_id'
 });
