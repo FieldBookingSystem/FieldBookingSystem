@@ -1,6 +1,7 @@
 const doc = document.getElementById("searchBtn");
 const cont = document.getElementsByClassName("container2");
 const dateField = document.getElementById("datepicker");
+const loginBtn  = document.getElementById("loginBtn");
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
@@ -14,8 +15,6 @@ function getfields() {
         return response.json();
     });
   }
-
-//getApi();
 
 
 
@@ -65,9 +64,22 @@ const searchBtnHandler = async (event) => {
   // }
 };
 
+// //login button handler
+// const loginBtnHandler = async (event) => {
+  
+//   event.preventDefault();
+//   document.location.replace('/login');
+ 
+// };
 
+//Jquery script for datepicker
 $( function() {
   $( "#datepicker" ).datepicker();
 } );
 
+
+//event listern for search button 
 doc.addEventListener('click', searchBtnHandler);
+
+// //event listener for login button
+// loginBtn.addEventListener('click', loginBtnHandler);

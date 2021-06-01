@@ -1,7 +1,13 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class Coach extends Model {}
+class Coach extends Model {
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
+
+}
 
 Coach.init(
   {
@@ -28,7 +34,7 @@ Coach.init(
       allowNull: false,
       // must be longer than 8 characters
       validate: {
-        len: [8],
+        len: [6],
       },
     },
 
