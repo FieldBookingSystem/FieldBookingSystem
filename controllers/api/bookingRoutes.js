@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const bookingData = await Booking.findByPk(req.params.id);
+    include: [{ model: Coach, through: Booking }]
     res.status(200).json(bookingData)
 
   } catch (err) {
