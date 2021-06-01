@@ -28,7 +28,7 @@ Coach.init(
       validate: {
         isEmail: true,
       },
-      },
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -37,17 +37,16 @@ Coach.init(
         len: [6],
       },
     },
-
-      postalcode: {
-        type: DataTypes.STRING,
-        // prevents null values
-        allowNull: false,
-        // will only allow alphanumeric characters
-        validate: {
-          isAlphanumeric: true,
-          max: 6,
-        },
+    postalcode: {
+      type: DataTypes.STRING,
+      // prevents null values
+      allowNull: false,
+      // will only allow alphanumeric characters
+      validate: {
+        isAlphanumeric: true,
+        max: 6,
       },
+    },
   },
   {
     sequelize,

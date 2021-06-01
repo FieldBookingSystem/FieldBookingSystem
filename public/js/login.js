@@ -33,12 +33,12 @@ const signupFormHandler = async (event) => {
   if (name && email && password && postalcode) {
     const response = await fetch('/api/coach', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password , postalcode}),
-     // headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, password, postalcode }),
+      headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

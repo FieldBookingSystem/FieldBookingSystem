@@ -128,13 +128,14 @@ router.post('/logout', (req, res) => {
 //POST A NEW COACH--------------- 
 router.post('/', async (req, res) => {
   try {
+    console.log("hi")
     const newCoach = await Coach.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
       postalcode: req.body.postalcode,
     });
-
+    console.log("newCoach".newCoach)
     res.status(200).json(newCoach);
   } catch (err) {
     res.status(400).json(err);
