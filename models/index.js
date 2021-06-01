@@ -7,13 +7,13 @@ Coach.hasMany(Booking, {
   onDelete: 'CASCADE'
 });
 
-Fields.HasMany(Booking, {
+Fields.hasMany(Booking, {
   through: Fields,
   foreignKey: 'field_id'
 });
 
-Booking.HasOne(Fields, {
+// Booking.hasOne(Fields, {
 
-  foreignKey: 'field_id'
-});
+//   foreignKey: 'field_id'
+// });
 module.exports = { Booking, Coach, Fields };
