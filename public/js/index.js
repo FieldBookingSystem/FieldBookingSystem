@@ -1,6 +1,6 @@
-console.log("this is working");
 const doc = document.getElementById("searchBtn");
 const cont = document.getElementsByClassName("container2");
+const dateField = document.getElementById("datepicker");
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
@@ -20,11 +20,14 @@ function getfields() {
 
 
 const searchBtnHandler = async (event) => {
+  
   event.preventDefault();
   //getfields();
  // console.log(typeof cont);
-  console.log("test");
+
+  
   document.location.replace('/fieldDisplay');
+  console.log(dateField.value);
  // cont.innerText = `{{> field-details}}`;
   // const fieldString = ` {{#each fields as |field| }}
   // <div class="row mb-4 project">
@@ -63,5 +66,8 @@ const searchBtnHandler = async (event) => {
 };
 
 
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
 
 doc.addEventListener('click', searchBtnHandler);

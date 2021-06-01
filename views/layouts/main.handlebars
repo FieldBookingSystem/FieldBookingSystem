@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/base-min.css">
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-min.css">
         <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./css/booking.css">
         <link rel="stylesheet" href="./css/view.css">
@@ -27,10 +30,12 @@
             <!-- this is where stuff should. -->
             <!-- shearch bar kinda like what the one the air bnb website.  -->
             <div class="pure-u-md-17-24 searchbar">
-                <h4>Date</h4>
+                 <form class="pure-u-md-17-24 pure-u-sm-1"></form>
+                <p>Date: <input type="text" id="datepicker"></p>
                 <h4>Address</h4>
                 <h4>other data?</h4>
                 <div id="searchBtn" class="submitBtn pure-u-md-20-24"> Search </div>
+                </form>
             </div>
 
             <!-- We might have this appear after a user selects a date and put in an address of some kind. -->
