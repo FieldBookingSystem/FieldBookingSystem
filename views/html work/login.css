@@ -1,0 +1,28 @@
+.block {
+    background-color: white;
+    color: black;
+}
+
+.titlesLeft {
+    text-align: left;
+    margin-left: 14px;
+}
+
+.pure-u-md-22-24 {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 15px;
+    background-color: rgb(8, 90, 65);
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+
+button:hover {
+    border: 2px solid rgb(8, 90, 65);
+    color: rgb(8, 90, 65);
+    background-color: white;
+}

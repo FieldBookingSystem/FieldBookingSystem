@@ -1,0 +1,40 @@
+
+.searchbar{
+    background-color: white;
+    border: none;
+    color:  #213525;
+    padding: 20px;
+}
+
+h4 {
+    display: inline;
+    padding: 0 40px;
+}
+
+h4:hover{
+    color: #667f5f;
+}
+
+.search {
+    background-color:  #213525;
+    border: none;
+    margin-top: 10px;
+}
+
+.search:hover {
+    border: 2px solid  #213525;
+}
+
+select {
+    width: 26%
+}
+
+.times { 
+    margin-top: 15px;
+}
+
+.submitBtn {
+    margin-top: 15px;
+    background-color:  #213525;
+    border: none;
+}
