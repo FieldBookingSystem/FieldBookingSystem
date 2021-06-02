@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Coach, Booking, Fields } = require('../../models');
+const bcrypt = require('bcrypt');
 const withAuth = require('./../../utils/auth');
 
 // gets all the fields data I think this can be used to build the 
@@ -61,34 +62,31 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 // this function checks if the user is logged in. and if they are not directs them to a log in page
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
+// router.get('/login', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect('/profile');
+//     return;
+//   }
 
-  res.render('login');
-});
+//   res.render('login');
+// });
 
 
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await Coach.findOne({
-      where: {
-        email: req.body.email,
-      },
-    });
-
-    if (!dbUserData) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+    const userData = await Coach.findOne({ where: { email: req.body.email } });
+    console.log("did not validate");
+    if (!userData) {
+      
+      res.status(404).json({ message: 'Login failed. Please try again!' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
-    console.log(validPassword);
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      userData.password
+    );
     if (!validPassword) {
       res
         .status(400)
@@ -102,7 +100,7 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
