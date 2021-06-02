@@ -12,10 +12,15 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(response);
+     
+   // const users = response.map((project) => project.get({ plain: true }));
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/');
+      console.log(response.coach.value);
+      console.log(response.user.value);
+      document.location.replace(`/profile/${response.coach.id}`);
     } else {
       alert(response.statusText);
     }
@@ -38,7 +43,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace(`login`);
     } else {
       alert(response.statusText);
     }
