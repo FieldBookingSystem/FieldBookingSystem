@@ -1,18 +1,14 @@
-.timesbooked {
+.card {
     background-color: white;
-    color: black;
-    text-align: left;
+    color: #213525;
+    margin-bottom: 20px;
+    border-radius: 15px;
 }
 
-.removehover {
-    color:#000000;
+.card:hover {
+    color: #213525;
 }
 
-.removehover:hover {
-    color: black;
-}
-
-.view {
-    margin: 0;
-    padding: 0;
+.fields {
+    color: #213525;
 }
