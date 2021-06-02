@@ -2,6 +2,8 @@ const doc = document.getElementById("searchBtn");
 const cont = document.getElementsByClassName("container2");
 const dateField = document.getElementById("datepicker");
 const loginBtn  = document.getElementById("loginBtn");
+const homeBtn = document.getElementById("homeBtn");
+const goHome = document.getElementById("goHome")
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
@@ -77,9 +79,18 @@ $( function() {
   $( "#datepicker" ).datepicker();
 } );
 
+// function takes users back to the home page when they click home or the name in the header. 
+function homeBtnHandler() {
+  document.location.replace('/')
+};
+
 
 //event listern for search button 
 doc.addEventListener('click', searchBtnHandler);
 
 // //event listener for login button
 // loginBtn.addEventListener('click', loginBtnHandler);
+
+// event listeners on the home button and the name in the header
+homeBtn.addEventListener('click', homeBtnHandler);
+goHome.addEventListener('click', homeBtnHandler);

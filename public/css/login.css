@@ -1,12 +1,24 @@
 .pure-u-md-8-24 {
     background-color: white;
     color: black;
-    align-content: center;
+    align-content: center; 
+
 }
 
 .form-group {
     background-color: white;
     color: black;
     text-align: right;
-    margin-right: 25%; 
+    margin-right: 25%;
+}
+
+.button {
+    background-color:  #213525;
+    border: none;
+    margin-top: 10px;
+    margin-right: 60px;
+}
+
+.button:hover {
+    border: 2px solid  #213525;
 }

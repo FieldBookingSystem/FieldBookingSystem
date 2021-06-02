@@ -1,26 +1,15 @@
-
-
- <!-- stuff in the section tag is what will likely change from page to page -->
-  <section class="card">
+  <section>
   <!-- The contents of this card links to the gallery page using the gallery ID -->
   {{{body}}}
   {{#each fields as |field| }}
-    <div class="row mb-4 project">
-        <div class="col-md-5">
-            <h2>
-                {{field.name}}
-                {{field.id}}
-                {{field.address}}
-            </h2>
-                
-        </div>
+  <div class="card pure-u-md-15-24">
+    <div class="fields">
+            <h2>{{field.name}}</h2>   
+            <p>{{field.address}}</p>       
     </div>
+</div>
     {{/each}}
 </section>
-       
-    </body>
-   <script src="./js/index.js"></script>
-</html>
 
 
 
