@@ -5,7 +5,9 @@ const withAuth = require('../../utils/auth');
 //GET ALL BOOKINGS---------------
 router.get('/', async (req, res) => {
   try {
-    const bookingData = await Booking.findAll();
+    const bookingData = await Booking.findAll(
+    {include: [Coach, Fields]}
+    );
     res.status(200).json(bookingData);
 
   } catch (err) {
@@ -16,14 +18,27 @@ router.get('/', async (req, res) => {
 // GET BY ID----------------------
 router.get('/:id', async (req, res) => {
   try {
-    const bookingData = await Booking.findByPk(req.params.id);
-    include: [{ model: Coach, through: Booking }]
+    const bookingData = await Booking.findByPk(req.params.id,{
+      include: [Coach]}
+      );
     res.status(200).json(bookingData)
 
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// router.get('/coachID/:id', async (req, res) => {
+//   try {
+//     const bookingData = await Booking.findByPk(req.params.id,{
+//       include: [Coach]}
+//       );
+//     res.status(200).json(bookingData)
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 //GET USER AUTH -----------------
 router.get('/profile', withAuth, async (req, res) => {

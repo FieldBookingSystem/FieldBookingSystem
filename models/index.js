@@ -1,6 +1,6 @@
-const Booking = require('./Booking');
 const Coach = require('./Coach');
 const Fields = require('./Fields');
+const Booking = require('./Booking');
 
 Coach.hasMany(Booking, {
   foreignKey: 'coach_id',

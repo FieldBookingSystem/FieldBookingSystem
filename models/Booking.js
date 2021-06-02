@@ -14,6 +14,10 @@ Booking.init(
     field_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+          model: 'fields',
+          key: 'id',
+        },
     },
     team_name: {
       type: DataTypes.STRING,
@@ -33,6 +37,14 @@ Booking.init(
         // will only allow alphanumeric characters
        
     },
+    coach_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'coach',
+        key: 'id',
+      },
+  },
   },
   {
     sequelize,
