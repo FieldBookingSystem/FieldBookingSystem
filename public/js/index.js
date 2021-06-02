@@ -2,7 +2,12 @@ const doc = document.getElementById("searchBtn");
 const cont = document.getElementsByClassName("container2");
 const dateField = document.getElementById("datepicker");
 const loginBtn  = document.getElementById("loginBtn");
+<<<<<<< HEAD
 const signupBtn = document.getElementById("signupBtn");
+=======
+const homeBtn = document.getElementById("homeBtn");
+const goHome = document.getElementById("goHome")
+>>>>>>> bbf1440a858a3ad99e5d0e4b3a6c886f780e9b20
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
@@ -78,9 +83,18 @@ $( function() {
   $( "#datepicker" ).datepicker();
 } );
 
+// function takes users back to the home page when they click home or the name in the header. 
+function homeBtnHandler() {
+  document.location.replace('/')
+};
+
 
 //event listern for search button 
 doc.addEventListener('click', searchBtnHandler);
 
 // //event listener for login button
 // loginBtn.addEventListener('click', loginBtnHandler);
+
+// event listeners on the home button and the name in the header
+homeBtn.addEventListener('click', homeBtnHandler);
+goHome.addEventListener('click', homeBtnHandler);

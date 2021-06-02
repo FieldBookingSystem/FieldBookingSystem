@@ -7,23 +7,8 @@ Coach.hasMany(Booking, {
   onDelete: 'CASCADE'
 });
 
-Fields.hasMany(Booking, {
-  foreignKey: 'field_id'
-});
-
-Booking.belongsTo(Coach, {
-  foreignKey: 'coach_id'
-});
-
 Booking.belongsTo(Fields, {
   foreignKey: 'field_id'
 });
-
-
-// Booking.belongsTo(Coach, {
-//   foreignKey: 'id'
-// });
-
-// Coach.belongsTo(Booking);
 
 module.exports = { Booking, Coach, Fields };

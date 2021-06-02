@@ -49,6 +49,16 @@ Coach.init(
     },
   },
   {
+    hooks: {
+      beforeCreate: async (newCoachData) => {
+        newCoachData.password = await bcrypt.hash(newCoachData.password, 10);
+        return newCoachData;
+      },
+      beforeUpdate: async (updatedCoachData) => {
+        updatedCoachData.password = await bcrypt.hash(updatedCoachData.password, 10);
+        return updatedCoachData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
