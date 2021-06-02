@@ -1,14 +1,20 @@
 
 .searchbar{
     background-color: white;
-    border: none;
+    border-color:black;
+    border-radius: 5rem;
     color:  #213525;
-    padding: 20px;
+    padding: 1px;
+    width: 100%;
 }
 
 h4 {
-    display: inline;
-    padding: 0 40px;
+    display: inline-flex;
+    padding:  25px;
+    background: 667f5f;
+    transition: width 2s, height 4s;
+    margin-top: 5px;
+    
 }
 
 h4:hover{
@@ -16,21 +22,23 @@ h4:hover{
 }
 
 .search {
-    background-color:  #213525;
+    background-color:  none;
     border: none;
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: large;
 }
 
 .search:hover {
-    border: 2px solid  #213525;
+    pointer-events: painted;
+    cursor: pointer;
 }
 
 select {
-    width: 26%
+    width: 15%;
 }
 
 .times { 
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .submitBtn {
@@ -38,3 +46,38 @@ select {
     background-color:  #213525;
     border: none;
 }
+body {
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F399187%2Fpexels-photo-399187.jpeg%3Fcs%3Dsrgb%26dl%3Devening-field-football-field-399187.jpg%26fm%3Djpg&f=1&nofb=1');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    max-width: 100%;
+}
+
+
+h4, select {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: none;
+  }
+  
+  h4, select {
+    float: left;
+    border-right:1px solid #bbb;
+  }
+  
+  h4:last-child {
+    border-right: none;
+  }
+  
+  h4, select {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 1px 20px 5px 10px;
+    text-decoration: none;
+    padding-bottom: 0%;
+  }
+  

@@ -2,6 +2,7 @@ const doc = document.getElementById("searchBtn");
 const cont = document.getElementsByClassName("container2");
 const dateField = document.getElementById("datepicker");
 const loginBtn  = document.getElementById("loginBtn");
+const signupBtn = document.getElementById("signupBtn");
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
