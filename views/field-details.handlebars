@@ -6,8 +6,8 @@
     <div class="fields">
             <h2 class="pure-u-md-14-24">{{field.name}}</h2>   
             <p class="pure-u-md-14-24"> {{field.address}}</p>  
-            <p class="pure-u-md-14-24">Unique Field id: {{field.id}}</p> 
-            <div class="bookingBtn"> Book This Field </div>    
+            <p class="pure-u-md-14-24 uniqueId">Unique Field id: {{field.id}}</p> 
+            <button class="bookingBtn" data-internalid="{{field.id}}"> Book This Field </button>    
     </div>
 </div>
     {{/each}}

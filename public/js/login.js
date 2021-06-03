@@ -22,9 +22,9 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the profile page
       //console.log(response.coach.value);
-      //console.log(response.user.value);
-     //let sessStorageId = response.session.getItem("id");
-
+     // console.log(window.session.userid);
+     //let sessStorageId = event.localStorage.getItem("id");
+      //let sessStorageId = response.session.getItem("id");
       //document.location.replace(`/profile/${sessStorageId}`);
       document.location.replace(`/profile/${2}`);
     } else {

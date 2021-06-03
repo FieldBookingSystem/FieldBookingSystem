@@ -40,27 +40,58 @@ router.get('/fieldDisplay', async (req, res) => {
   }
 });
 
+
+
 router.get('/profile/:id', async (req, res) => {
   try {
-    const coachData = await Coach.findByPk(req.params.id, {
-      include: [
-        {
-          model: Coach,
-          attributes: ['name'],
-        },
-      ],
+    const bookingData = await Booking.findOne({ where: { coach_id: req.params.id } }, {
+      // include: [
+      //   {
+      //     model: Fields,
+      //     attributes: ['name'],
+      //   },
+      // ],
     });
 
-    const coach1 = coachData.get({ plain: true });
+    const booking1 = bookingData.get({ plain: true });
 
     res.render('profile', {
-      ...coach1,
+      booking1,
       logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+
+
+
+
+
+
+
+// router.get('/profile/:id', async (req, res) => {
+//   try {
+//     const coachData = await Coach.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Coach,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+
+//     const coach1 = coachData.get({ plain: true });
+
+//     res.render('profile', {
+//       ...coach1,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // Use withAuth middleware to prevent access to route
 // router.get('/profile', withAuth, async (req, res) => {
