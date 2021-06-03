@@ -1,16 +1,15 @@
-/* .container{
-    text-align: center; */
-    /* not final colour will change at some point. */
-    /* background-color: lightblue;
+.container{
+    text-align: center;
+    background-color: lightblue;
     padding: 20px;
-} */
+} 
 
-/* .searchbar{
+ .searchbar{
     background-color: white;
     border: none;
     color: rgb(8, 90, 65);
     padding: 20px;
-}
+} 
 
 h4 {
     display: inline;
@@ -44,9 +43,9 @@ select {
     margin-top: 15px;
     background-color: green;
     border: none;
-} */
+}
 
-.h2{
+/* .h2{
     color: white;
 }
 
