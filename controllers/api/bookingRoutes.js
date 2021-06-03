@@ -28,17 +28,22 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// router.get('/coachID/:id', async (req, res) => {
-//   try {
-//     const bookingData = await Booking.findByPk(req.params.id,{
-//       include: [Coach]}
-//       );
-//     res.status(200).json(bookingData)
-
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.post('/', async (req, res) => {
+  try {
+    console.log("New Booking: ")
+    const newBooking = await Booking.create({
+      field_id: req.body.field_id,
+      team_name: req.body.team_name,
+      date: req.body.date,
+      time_slot: req.body.time_slot,
+      coach_id: req.body.coach_id,
+    });
+    console.log("newBooking".newBooking)
+    res.status(200).json(newBooking);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 //GET USER AUTH -----------------
 router.get('/profile', withAuth, async (req, res) => {
