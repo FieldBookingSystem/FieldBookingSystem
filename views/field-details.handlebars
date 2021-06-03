@@ -4,8 +4,10 @@
   {{#each fields as |field| }}
   <div class="card pure-u-md-15-24">
     <div class="fields">
-            <h2>{{field.name}}</h2>   
-            <p>{{field.address}}</p>       
+            <h2 class="pure-u-md-15-24">{{field.name}}</h2>   
+            <p class="pure-u-md-15-24"> {{field.address}}</p>  
+            <p class="pure-u-md-15-24"> {{field.id}}</p> 
+            <button> Book This Field </button>    
     </div>
 </div>
     {{/each}}
