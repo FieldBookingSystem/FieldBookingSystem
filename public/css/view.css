@@ -13,3 +13,19 @@
 .fields {
     color: #213525;
 }
+
+.bookingBtn {
+    background-color: #213525; 
+    border: 2px solid #213525;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+ .booking:hover {
+    background-color: white;
+    color: #213525;
+ }
