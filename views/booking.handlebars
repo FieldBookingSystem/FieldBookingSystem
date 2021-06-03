@@ -1,98 +1,60 @@
-<!-- Files can be broken into handle bars later. -->
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Ottawa Field Booking</title>
-        <!-- Pure Grid System https://purecss.io/grids/ -->
-        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/base-min.css">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-min.css">
-        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/view.css">
-        <link rel="stylesheet" href="./css/login.css">
-        <link rel="stylesheet" href="./css/booking.css">
-    </head>
-    <body>
-        <!-- header will stay about the same for every page -->
-        <header>
-        <h1 class="pure-u-md-18-24 pure-u-sm-1" id="goHome">Ottawa Field Booking</h1>
-        <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#">Sign Up</div>
+<div class="container">
+    <div class="container-time">
+        <h2 class="heading">Time Slots</h2>
+        <h3 class="heading-days">Monday-Friday</h3>
+        <p>8am - 12pm (Morning Session)</p>
+        <p>12pm - 3pm (Afternoon Session)</p>
+        <p>12pm - 6pm (Evening Session)</p>
 
-        {{#if loggedIn}}
-                    <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/logout">Logout</a></div>
-        {{else}}
-            <!-- Otherwise, show a link to login -->
-             <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/login">Login</a></div>
+        <h3 class="heading-days">Saturday and Sunday</h3>
+        <p>9am - 1pm (Morning Session)</p>
+        <p>1pm - 4pm (Afternoon Session)</p>
 
-        {{/if}}
-        {{!-- <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/login">Login</a></div> --}}
-        </header>
-        <nav>
-            <h5 id ="/booking">View Bookings</h5>
-            <h5 id="homeBtn">Home</h5>
-        </nav>
-        <div class="container">
-                <div class="container-time">
-                <h2 class="heading">Time Slots</h2>
-                <h3 class="heading-days">Monday-Friday</h3>
-                <p>8am - 12pm (Morning Session)</p>
-                <p>12pm - 3pm (Afternoon Session)</p>
-                <p>12pm - 6pm (Evening Session)</p>
-                
-                <h3 class="heading-days">Saturday and Sunday</h3>
-                <p>9am - 1pm (Morning Session)</p>
-                <p>1pm - 4pm (Afternoon Session)</p>
-                
-                <hr>
-                
-                <h4>Questions? Contact Us!</h4>
-                <h4 class="heading-phone">Call Us: (123) 45-45-456</h4>
-                </div>
-                
-                <div class="container-form">
-                <form action="#">
-                <h2 class="heading heading-yellow">Reserve Your Field</h2>
-                
-                <div class="form-field">
+        <hr>
+
+        <h4>Questions? Contact Us!</h4>
+        <h4 class="heading-phone">Call Us: (123) 45-45-456</h4>
+    </div>
+
+    <div class="container-form">
+        <form action="#">
+            <h2 class="heading heading-yellow">Reserve Your Field</h2>
+
+            <div class="form-field">
                 <p>Team Name</p>
                 <input type="text" placeholder="Name">
-                </div>
-                <div class="form-field">
+            </div>
+            <div class="form-field">
                 <p>Date Selected</p>
                 <input type="date">
-                </div>
-                <div class="form-field">
+            </div>
+            <div class="form-field">
                 <p>Time Slot</p>
                 <select name="select" id="#">
-                <option value="1">Morning</option>
-                <option value="2">Afternoon</option>
-                <option value="3">Evening</option>
+                    <option value="1">Morning</option>
+                    <option value="2">Afternoon</option>
+                    <option value="3">Evening</option>
                 </select>
-                </div>
-                <div class="form-field">
+            </div>
+            <div class="form-field">
                 <p>Session Duration</p>
                 <input type="time">
-                </div>
-                <div class="form-field">
+            </div>
+            <div class="form-field">
                 <p>Session Type</p>
                 <select name="select" id="#">
-                <option value="1">Practice</option>
-                <option value="2">Game</option>
-                <option value="3">Exhibition Match</option>
-                <option value="4">Scrimmage</option>
+                    <option value="1">Practice</option>
+                    <option value="2">Game</option>
+                    <option value="3">Exhibition Match</option>
+                    <option value="4">Scrimmage</option>
                 </select>
-                </div>
-                
-                <button class="btn">Submit</button>
-                </form>
-                </div>
-                </div>
-                
-            
-</body>
-<script src="index.js"></script>
+            </div>
 
-</html>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="index.js"></script>
