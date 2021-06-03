@@ -27,10 +27,10 @@ div {
     color: white;
 }
 
-div:hover {
+/* div:hover {
     background-color: rgb(255, 255, 255); 
     color: #213525;
-}
+} */
 
 @media screen and (max-width: 750px) {
     div {
@@ -70,4 +70,8 @@ h5:hover {
     /* not final colour will change at some point. */
     background-color:  #eef5ef;
     padding: 20px;
+}
+
+.heading-yellow{
+    color: white;
 }

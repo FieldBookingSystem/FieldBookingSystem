@@ -2,14 +2,18 @@
   <!-- The contents of this card links to the gallery page using the gallery ID -->
   {{{body}}}
   {{#each fields as |field| }}
-  <div class="card pure-u-md-15-24">
+  <div class="card pure-u-md-15-24 pure-u-sm-18-24">
     <div class="fields">
-            <h2>{{field.name}}</h2>   
-            <p>{{field.address}}</p>       
+            <h2 class="pure-u-md-14-24">{{field.name}}</h2>   
+            <p class="pure-u-md-14-24"> {{field.address}}</p>  
+            <p class="pure-u-md-14-24 uniqueId">Unique Field id: {{field.id}}</p> 
+            <button class="bookingBtn" data-internalid="{{field.id}}"> Book This Field </button>    
     </div>
 </div>
     {{/each}}
 </section>
+
+<script src="./js/booking.js"></script>
 
 
 

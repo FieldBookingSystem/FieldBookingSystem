@@ -3,6 +3,11 @@ const cont = document.getElementsByClassName("container2");
 const dateField = document.getElementById("datepicker");
 const loginBtn  = document.getElementById("loginBtn");
 
+const signupBtn = document.getElementById("signupBtn");
+
+const homeBtn = document.getElementById("homeBtn");
+const goHome = document.getElementById("goHome")
+
 //let requestUrl = "http://localhost:5001/api/fields"
 
 function getfields() {
