@@ -8,18 +8,7 @@ router.get('/', async (req, res) => {
   
     const fieldData = await Fields.findAll();  
     
-   // res.render('homepage');
-
-   // Get all fields and JOIN with user data
-   // const homepage = await Fields.findAll({
-      // include: [
-      //   {
-      //     model: Fields,
-      //     attributes: ['name'],
-      //   },
-      // ],
-   // });
-
+   
   //  Serialize data so the template can read it
     const fields = fieldData.map((field) => field.get({ plain: true }));
 

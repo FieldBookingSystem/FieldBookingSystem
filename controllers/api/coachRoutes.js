@@ -82,7 +82,7 @@ router.post('/login', async (req, res) => {
       res.status(404).json({ message: 'Login failed. Please try again!' });
       return;
     }
-    console.log(userData.id);
+    //console.log(userData.id);
     const validPassword = await bcrypt.compare(
       req.body.password,
       userData.password
@@ -97,7 +97,11 @@ router.post('/login', async (req, res) => {
     // Once the user successfully logs in, set up the sessions variable 'loggedIn'
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.userid = userData.id;
+      console.log(req.session.userid);
+     // sessionStorage.setItem('id', userData.id);
+      //localStorage.setItem("id", userData.id);
+      //sessionStorage.setItem('id', userData.id);
       res
         .status(200)
         .json({  id: userData.id });

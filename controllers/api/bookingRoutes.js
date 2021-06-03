@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const bookingData = await Booking.findByPk(req.params.id,{
-      include: [Coach]}
+      include: [Coach, Fields]}
       );
     res.status(200).json(bookingData)
 

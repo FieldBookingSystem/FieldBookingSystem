@@ -3,6 +3,7 @@
     color: #213525;
     margin-bottom: 20px;
     border-radius: 15px;
+    text-align: left;
 }
 
 .card:hover {
