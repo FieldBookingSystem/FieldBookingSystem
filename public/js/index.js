@@ -36,25 +36,6 @@ const searchBtnHandler = async (event) => {
   
   document.location.replace('/fieldDisplay');
   console.log(dateField.value);
- // cont.innerText = `{{> field-details}}`;
-  // const fieldString = ` {{#each fields as |field| }}
-  // <div class="row mb-4 project">
-  //     <div class="col-md-5">
-  //         <h2>
-  //             {{field.name}}
-  //             {{field.id}}
-  //             {{field.address}}
-  //         </h2>
-              
-  //     </div>
-  // </div>
-  // {{/each}}`;
-
-  // doc.body.insertAdjacentHTML("beforeend", `{{>field-details}}`
-  //);  
-  // Collect values from the login form
- // const email = document.querySelector('#email-login').value.trim();
- // const password = document.querySelector('#password-login').value.trim();
  
   // if (email && password) {
   //   // Send a POST request to the API endpoint
@@ -73,13 +54,6 @@ const searchBtnHandler = async (event) => {
   // }
 };
 
-// //login button handler
-// const loginBtnHandler = async (event) => {
-  
-//   event.preventDefault();
-//   document.location.replace('/login');
- 
-// };
 
 //Jquery script for datepicker
 $( function() {
@@ -89,6 +63,3 @@ $( function() {
 
 //event listener for search button 
 doc.addEventListener('click', searchBtnHandler);
-
-// //event listener for login button
-// loginBtn.addEventListener('click', loginBtnHandler);
