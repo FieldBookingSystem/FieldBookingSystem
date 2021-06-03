@@ -16,7 +16,16 @@ function getfields() {
     });
   }
 
-
+  function postBooking() {
+    fetch("/api/booking")
+      .then(function (response) {
+        console.log(response);
+        if (response.status === 200) {
+          response.json().then(data  => console.log(data))
+        }
+        return response.json();
+    });
+  }
 
 const searchBtnHandler = async (event) => {
   
@@ -78,7 +87,7 @@ $( function() {
 } );
 
 
-//event listern for search button 
+//event listener for search button 
 doc.addEventListener('click', searchBtnHandler);
 
 // //event listener for login button
