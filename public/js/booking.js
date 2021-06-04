@@ -1,5 +1,8 @@
 console.log("connected");
 
+// let datepicker = document.getElementById("datepicker").nodeValue
+// console.log(datepicker)
+
 $("button").click(function() {
     let internalId = $(this).data('internalid');
     localStorage.setItem("fieldId", JSON.stringify(internalId));
