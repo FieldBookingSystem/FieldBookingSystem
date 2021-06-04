@@ -65,7 +65,7 @@ const searchBtnHandler = async (event) => {
 // Function brings people back to the home page
 homeHandler = async (event) => {
  console.log( event.response);
-  //document.location.replace('/profile');
+ //document.location.replace('/profile');
 }
 
 

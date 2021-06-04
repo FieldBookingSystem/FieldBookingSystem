@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="/css/view.css">
         <link rel="stylesheet" href="/css/login.css">
         <link rel="stylesheet" href="/css/booking.css"> 
+        <link rel="stylesheet" href="/css/profile.css">
     </head>
     <body>
         <!-- header will stay about the same for every page -->
@@ -22,10 +23,10 @@
         {{!-- <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#">Sign Up</div> --}}
 
         {{#if logged_in}}
-                    <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/logout">Logout</a></div>
+                    <a href="/logout" class="login pure-u-md-2-24 pure-u-sm-10-24">Logout</a>
         {{else}}
             <!-- Otherwise, show a link to login -->
-             <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/login">Login</a></div>
+             <a href="/login" class="login pure-u-md-2-24 pure-u-sm-10-24">Login</a>
 
         {{/if}}
         {{!-- <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/login">Login</a></div> --}}

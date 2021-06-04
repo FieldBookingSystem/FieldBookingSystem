@@ -18,6 +18,19 @@ h1 {
     padding: 0;
     margin: 0;
     color: white;
+    margin-bottom: 30px;
+}
+
+.login {
+    border: 4px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+}
+
+.login:hover {
+    color: #213525;
+    background-color: rgb(255, 255, 255); 
 }
 
 div {
@@ -27,10 +40,10 @@ div {
     color: white;
 }
 
-/*div:hover {
-    background-color: rgb(255, 255, 255); 
+div:hover {
     color: #213525;
-}*/
+    background-color: rgb(255, 255, 255); 
+}
 
 @media screen and (max-width: 750px) {
     div {
