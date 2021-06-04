@@ -53,9 +53,13 @@ router.get('/fieldDisplay', async (req, res) => {
 
 router.get('/profile/:id', async (req, res) => {
   try {
+
     const bookingData = await Booking.findAll({ where: { coach_id: req.params.id } }, {
       include: [ {model: Fields,  attributes: ['name', 'address'], }],
     });
+    // const bookingData = await Booking.findAll({ where: { coach_id: req.params.id } }, {
+    //   include: [ {model: Fields,  attributes: ['name', 'address'], }],
+    // });
 
     // const bookingData = await Booking.findAll({ where: { coach_id: req.params.id }}, {
     
@@ -79,11 +83,11 @@ router.get('/profile/:id', async (req, res) => {
       //  include: [ {model: Fields,  attributes: ['name', 'address'], }],
       // }
     );
-   
+   console.log(bookingData );
     const coach1 = coachData.get({ plain: true });
+    const booking1 = bookingData.map((data) => data.get({ plain: true }));
 
 
-      const booking1 = bookingData.map((data) => data.get({ plain: true }));
    console.log(booking1);
    //localStorage.setItem("coachId", JSON.stringify(req.params.id));
       res.render('profile', {
