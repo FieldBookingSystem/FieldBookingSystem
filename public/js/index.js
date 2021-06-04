@@ -6,7 +6,8 @@ const loginBtn  = document.getElementById("loginBtn");
 const signupBtn = document.getElementById("signupBtn");
 
 const homeBtn = document.getElementById("homeBtn");
-const goHome = document.getElementById("goHome")
+const home = document.getElementById("home");
+
 
 //let requestUrl = "http://localhost:5001/api/fields"
 
@@ -37,7 +38,7 @@ const searchBtnHandler = async (event) => {
   event.preventDefault();
   //getfields();
  // console.log(typeof cont);
-  console.log(dateField.value);
+  //console.log(dateField.value);
   localStorage.setItem("selectedDate", JSON.stringify(dateField.value));
   
   document.location.replace('/fieldDisplay');
@@ -60,6 +61,10 @@ const searchBtnHandler = async (event) => {
   // }
 };
 
+function homeHandler() {
+  document.location.replace('/');
+}
+
 
 //Jquery script for datepicker
 
@@ -71,3 +76,5 @@ $( function() {
 
 //event listener for search button 
 doc.addEventListener('click', searchBtnHandler);
+homeBtn.addEventListener('click', homeHandler);
+home.addEventListener('click', homeHandler);
