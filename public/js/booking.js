@@ -3,6 +3,7 @@ console.log("connected");
 // let datepicker = document.getElementById("datepicker").nodeValue
 // console.log(datepicker)
 
+// function gets field id
 $("button").click(function() {
     let internalId = $(this).data('internalid');
     localStorage.setItem("fieldId", JSON.stringify(internalId));
@@ -11,6 +12,8 @@ $("button").click(function() {
     // let field = JSON.parse(localStorage.getItem("fieldId"))
     // console.log(field)
 });
+
+
 const bookingFormHandler = async (event) => {
     event.preventDefault();
   
