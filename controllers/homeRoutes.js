@@ -57,6 +57,23 @@ router.get('/profile/:id', async (req, res) => {
       include: [ {model: Fields,  attributes: ['name', 'address'], }],
     });
 
+    // const bookingData = await Booking.findAll({ where: { coach_id: req.params.id }}, {
+    
+    //   include: [{ model: fields }],
+    //   // TODO: Add a sequelize literal to get a count of short books
+    //   // attributes: {
+    //   //   include: [
+    //   //     [
+    //   //       // Use plain SQL to add up the total mileage
+    //   //       sequelize.literal(
+    //   //         `(SELECT * FROM fields WHERE fields.id = booking.field_id)`
+    //   //       )
+    //   //     ],
+    //   //   ],
+    //   // },
+
+    // },);
+
     const coachData = await Coach.findOne({ where: { id: req.params.id } },
       // {
       //  include: [ {model: Fields,  attributes: ['name', 'address'], }],
