@@ -134,6 +134,31 @@ router.get('/login', (req, res) => {
 
  res.render('login');
  });
+
+ router.get('/logout',  async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  try{
+    // const response1 = await fetch('/api/coach/logout', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    // });
+
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+
+    if (response1.ok) {
+      console.log('test123');
+      document.location.redirect('/');
+    } else {
+      alert(response1.statusText);
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+ });
+
 // //SIGNUP
 // router.get('/signup', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
