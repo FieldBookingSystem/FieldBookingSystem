@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS fieldbooking_db;
-CREATE DATABASE fieldbooking_db;
+DROP DATABASE IF EXISTS e4yes20g8jey21mr;
+CREATE DATABASE e4yes20g8jey21mr;
