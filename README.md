@@ -3,27 +3,27 @@ Full Stack Web application
 
 https://dashboard.heroku.com/apps/lit-spire-78703
 
-# Presentation
+## Presentation
 
 https://docs.google.com/presentation/d/199TAxBvQ7Zyo0R3FQw9L7yo2zJ0GX4OPzqH6NeMg5yc/edit?usp=sharing
 
-# Wire Frames
+##  Wire Frames
 https://drive.google.com/file/d/17Oav8_y1TSQAtU3vEnmp2bVuzT7hkFrC/view?usp=sharing
 
-# Project Description
+##  Project Description
 This tool allows sports teams in Ottawa to book a field to assure that there is a field and that no field is double booked. The Field Booking System allows a coach or facilitator to view available fields, select a date and book the field. 
 
-# Usage Information
+##  Usage Information
 Upon loading the applicaiton, the user should sign up for an account. Once signed in, the user can select a date, field and complete their details 
 
-# Installation Instructions
+##  Installation Instructions
 No additional installation required, this application is self standing. It runs it's own database and does not have have any external dependencies outside the user interface. 
 
-# Screenshots
+##  Screenshots
 ![image](https://user-images.githubusercontent.com/78323646/120727180-e249c500-c4a7-11eb-9ce1-f3cb7f95c54c.png)
 ![image](https://user-images.githubusercontent.com/78323646/120727207-f2fa3b00-c4a7-11eb-9463-1189b2db3c00.png)
 
-## User Stories
+### User Stories
 
 ```
 Login: 
@@ -47,7 +47,7 @@ As a user I need to be able to rate a field.
 
 ```
 
-# Questions
+## Questions
 If you have any questions, please do not hesitate to reach out to any of the team members at 
 
 ```
