@@ -54,17 +54,12 @@ router.get('/fieldDisplay', async (req, res) => {
 router.get('/profile/:id', async (req, res) => {
   try {
     const bookingData = await Booking.findAll({ where: { coach_id: req.params.id } }, {
-      // include: [
-      //   {
-      //     model: Fields,
-      //     attributes: ['name'],
-      //   },
-      // ],
+      include: [ {model: Fields,  attributes: ['name', 'address'], }],
     });
 
 
       const booking1 = bookingData.map((data) => data.get({ plain: true }));
-   
+   console.log(booking1);
       res.render('profile', {
         booking1,
         logged_in: req.session.logged_in
@@ -134,6 +129,31 @@ router.get('/login', (req, res) => {
 
  res.render('login');
  });
+
+ router.get('/logout',  async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  try{
+    // const response1 = await fetch('/api/coach/logout', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    // });
+
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+
+    if (response1.ok) {
+      console.log('test123');
+      document.location.redirect('/');
+    } else {
+      alert(response1.statusText);
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+ });
+
 // //SIGNUP
 // router.get('/signup', (req, res) => {
 //   // If the user is already logged in, redirect the request to another route
