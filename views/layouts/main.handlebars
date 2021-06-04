@@ -10,9 +10,9 @@
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet" href="./css/view.css">
-        <link rel="stylesheet" href="./css/login.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/view.css">
+        <link rel="stylesheet" href="/css/login.css">
         {{!-- <link rel="stylesheet" href="./css/booking.css"> --}}
     </head>
     <body>
@@ -21,7 +21,7 @@
         <h1 class="pure-u-md-18-24 pure-u-sm-1" id="goHome">Ottawa Field Booking</h1>
         <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#">Sign Up</div>
 
-        {{#if loggedIn}}
+        {{#if logged_in}}
                     <div class=" pure-u-md-2-24 pure-u-sm-7-24" id="#"><a href="/logout">Logout</a></div>
         {{else}}
             <!-- Otherwise, show a link to login -->

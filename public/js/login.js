@@ -15,18 +15,14 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log(response);
+   // console.log(response);
      
    // const users = response.map((project) => project.get({ plain: true }));
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      //console.log(response.coach.value);
-     // console.log(window.session.userid);
-     //let sessStorageId = event.localStorage.getItem("id");
-      //let sessStorageId = response.session.getItem("id");
-      //document.location.replace(`/profile/${sessStorageId}`);
-      document.location.replace(`/profile/${2}`);
+      const data = await response.json();
+      //console.log(data)
+      document.location.replace(`/profile/${data.id}`);
     } else {
       alert(response.statusText);
     }

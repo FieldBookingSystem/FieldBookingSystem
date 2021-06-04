@@ -33,7 +33,7 @@ router.get('/fieldDisplay', async (req, res) => {
     //res.status(200).json(fields);
      res.render('field-details', { 
          fields,
-       // logged_in: req.session.logged_in 
+       logged_in: req.session.logged_in 
        });
   } catch (err) {
     res.status(500).json(err);
@@ -44,7 +44,7 @@ router.get('/fieldDisplay', async (req, res) => {
 
 router.get('/profile/:id', async (req, res) => {
   try {
-    const bookingData = await Booking.findOne({ where: { coach_id: req.params.id } }, {
+    const bookingData = await Booking.findAll({ where: { coach_id: req.params.id } }, {
       // include: [
       //   {
       //     model: Fields,
@@ -53,13 +53,16 @@ router.get('/profile/:id', async (req, res) => {
       // ],
     });
 
-    const booking1 = bookingData.get({ plain: true });
 
-    res.render('profile', {
-      booking1,
-      logged_in: req.session.logged_in
-    });
+      const booking1 = bookingData.map((data) => data.get({ plain: true }));
+   
+      res.render('profile', {
+        booking1,
+        logged_in: req.session.logged_in
+      });
+ 
   } catch (err) {
+  
     res.status(500).json(err);
   }
 });
