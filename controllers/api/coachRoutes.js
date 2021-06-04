@@ -94,18 +94,12 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // localStorage.setItem("id", userData.id);
-    // console.log(localStorage.getItem("id"));
+    
 
-    // Once the user successfully logs in, set up the sessions variable 'loggedIn'
+    // Once the user successfully logs in, set up the sessions variable 'logged_in'
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
       req.session.userid = userData.id;
-      console.log(req.session.userid);
-     // req.sessionStorage.setItem('id', userData.id);
-      // localStorage.setItem("id", userData.id);
-      // console.log(localStorage.getItem("id"));
-      //sessionStorage.setItem('id', userData.id);
       res
         .status(200)
         .json({ user: userData, id: userData.id,  message: 'You are now logged in!' });
@@ -119,7 +113,7 @@ router.post('/login', async (req, res) => {
 // Logout
 router.post('/logout', (req, res) => {
   // When the user logs out, destroy the session
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });
