@@ -57,11 +57,21 @@ router.get('/profile/:id', async (req, res) => {
       include: [ {model: Fields,  attributes: ['name', 'address'], }],
     });
 
+    const coachData = await Coach.findOne({ where: { id: req.params.id } },
+      // {
+      //  include: [ {model: Fields,  attributes: ['name', 'address'], }],
+      // }
+    );
+   
+    const coach1 = coachData.get({ plain: true });
+
 
       const booking1 = bookingData.map((data) => data.get({ plain: true }));
    console.log(booking1);
+   //localStorage.setItem("coachId", JSON.stringify(req.params.id));
       res.render('profile', {
         booking1,
+        coach1,
         logged_in: req.session.logged_in
       });
  

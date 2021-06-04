@@ -19,7 +19,7 @@ const loginFormHandler = async (event) => {
    // console.log(response);
      
    // const users = response.map((project) => project.get({ plain: true }));
-   localStorage.setItem("coachId", JSON.stringify(data.id));
+    //localStorage.setItem("coachId", JSON.stringify(data.id));
   
     if (response.ok) {
       const data = await response.json();
