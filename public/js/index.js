@@ -37,10 +37,11 @@ const searchBtnHandler = async (event) => {
   event.preventDefault();
   //getfields();
  // console.log(typeof cont);
-
+  console.log(dateField.value);
+  localStorage.setItem("selectedDate", JSON.stringify(dateField.value));
   
   document.location.replace('/fieldDisplay');
-  console.log(dateField.value);
+  
  
   // if (email && password) {
   //   // Send a POST request to the API endpoint
@@ -61,6 +62,8 @@ const searchBtnHandler = async (event) => {
 
 
 //Jquery script for datepicker
+
+
 $( function() {
   $( "#datepicker" ).datepicker();
 } );
