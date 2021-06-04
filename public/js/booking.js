@@ -14,21 +14,22 @@ $("button").click(function() {
 const bookingFormHandler = async (event) => {
     event.preventDefault();
   
+    let field = JSON.parse(localStorage.getItem("fieldId"))
     const team = document.querySelector('#team-booking').value.trim();
     const date = document.querySelector('#date-booking').value.trim();
     const time = document.querySelector('#timeslot-booking').value.trim();
-    const duration = document.querySelector('#sessionduration-booking').value.trim();
-    const type = document.querySelector('#sessiontype-booking').value.trim();
+    // const duration = document.querySelector('#sessionduration-booking').value.trim();
+    // const type = document.querySelector('#sessiontype-booking').value.trim();
   
-    if (team && date && time && duration && type) {
-      const response = await fetch('/api/coach', {
+    if (team && date && time) {
+      const response = await fetch('/api/booking', {
         method: 'POST',
-        body: JSON.stringify({ team, date, time, duration, type}),
+        body: JSON.stringify({field, team, date, time}), //duration and type
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace(`booking`);
+        document.location.replace(`/profile/${data.id}`);
       } else {
         alert(response.statusText);
       }
@@ -37,7 +38,7 @@ const bookingFormHandler = async (event) => {
   
   document
     .querySelector('.booking-form')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit', bookingFormHandler);
 
 
 

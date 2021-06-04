@@ -6,6 +6,7 @@ const loginFormHandler = async (event) => {
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
+
  // const sessStorage = window.sessionStorage; 
 
   if (email && password) {
@@ -18,7 +19,8 @@ const loginFormHandler = async (event) => {
    // console.log(response);
      
    // const users = response.map((project) => project.get({ plain: true }));
-
+   localStorage.setItem("coachId", JSON.stringify(data.id));
+  
     if (response.ok) {
       const data = await response.json();
       //console.log(data)
