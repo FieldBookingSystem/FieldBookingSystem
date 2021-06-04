@@ -61,6 +61,8 @@ const searchBtnHandler = async (event) => {
   // }
 };
 
+
+// Function brings people back to the home page
 function homeHandler() {
   document.location.replace('/');
 }
@@ -76,5 +78,6 @@ $( function() {
 
 //event listener for search button 
 doc.addEventListener('click', searchBtnHandler);
+// Event Listeners for the home buttons
 homeBtn.addEventListener('click', homeHandler);
 home.addEventListener('click', homeHandler);
