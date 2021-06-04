@@ -16,21 +16,21 @@
         <h4 class="heading-phone">Call Us: (123) 45-45-456</h4>
     </div>
 
-    <div class="container-form">
+    <div class="booking-form">
         <form action="#">
             <h2 class="heading heading-yellow">Reserve Your Field</h2>
 
             <div class="form-field">
                 <p>Team Name</p>
-                <input type="text" placeholder="Name">
+                <input type="text" id="team-booking" placeholder="Name">
             </div>
             <div class="form-field">
                 <p>Date Selected</p>
-                <input type="date">
+                <input type="date" id="date-booking">
             </div>
             <div class="form-field">
                 <p>Time Slot</p>
-                <select name="select" id="#">
+                <select name="select" id="timeslot-booking">
                     <option value="1">Morning</option>
                     <option value="2">Afternoon</option>
                     <option value="3">Evening</option>
@@ -38,11 +38,11 @@
             </div>
             <div class="form-field">
                 <p>Session Duration</p>
-                <input type="time">
+                <input type="time" id="sessionduration-booking">
             </div>
             <div class="form-field">
                 <p>Session Type</p>
-                <select name="select" id="#">
+                <select name="select" id="sessiontype-booking">
                     <option value="1">Practice</option>
                     <option value="2">Game</option>
                     <option value="3">Exhibition Match</option>
@@ -50,7 +50,7 @@
                 </select>
             </div>
 
-            <button class="btn">Submit</button>
+            <button class="btn" type="submit">Submit</button>
         </form>
     </div>
 </div>
