@@ -117,10 +117,10 @@
                         .container-slots {
                             background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F399187%2Fpexels-photo-399187.jpeg%3Fcs%3Dsrgb%26dl%3Devening-field-football-field-399187.jpg%26fm%3Djpg&f=1&nofb=1');
                             background-repeat: no-repeat;
-                            background-attachment: scroll;
+                            background-attachment: fixed;
                             background-size: cover;
                             background-size: 100vw;
-                            background-size: 100vh;
+                            /* background-size: 100vh; */
                             margin: 20px;
                             box-shadow: 10px 15px 20px rgba(0, 0, 0, .1);
                             display: grid;
@@ -201,5 +201,7 @@
                                                 box-shadow: 10px 12px 15px rgba(0, 0, 0, .3);
                                                 }
                         
-
+.heading-yellow{
+    color: white;
+}
                         
