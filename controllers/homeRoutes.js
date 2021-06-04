@@ -54,17 +54,12 @@ router.get('/fieldDisplay', async (req, res) => {
 router.get('/profile/:id', async (req, res) => {
   try {
     const bookingData = await Booking.findAll({ where: { coach_id: req.params.id } }, {
-      // include: [
-      //   {
-      //     model: Fields,
-      //     attributes: ['name'],
-      //   },
-      // ],
+      include: [ {model: Fields,  attributes: ['name', 'address'], }],
     });
 
 
       const booking1 = bookingData.map((data) => data.get({ plain: true }));
-   
+   console.log(booking1);
       res.render('profile', {
         booking1,
         logged_in: req.session.logged_in
