@@ -22,6 +22,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/booking', async (req, res) => {
+  try {
+  //  Pass serialized data and session flag into template
+    res.render('booking');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
 router.get('/fieldDisplay', async (req, res) => {
