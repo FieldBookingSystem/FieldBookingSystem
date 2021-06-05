@@ -38,7 +38,7 @@ const bookingFormHandler = async (event) => {
   
   document
     .querySelector('.booking-form')
-    .addEventListener('submit', bookingFormHandler);
+    .addEventListener('form-btn', bookingFormHandler);
 
 
 
