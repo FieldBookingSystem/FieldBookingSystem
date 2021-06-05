@@ -13,11 +13,12 @@ $("button").click(function() {
 });
 const bookingFormHandler = async (event) => {
     event.preventDefault();
-  
+    let coachId1 = '<%= Session["coachId"] %>';
+    console.log(coachId1);
     let field = JSON.parse(localStorage.getItem("fieldId"))
     const team = document.querySelector('#team-booking').value.trim();
     const date = document.querySelector('#date-booking').value.trim();
-    const time = document.querySelector('#timeslot-booking').value.trim();
+    const time = document.querySelector('#timeslot-booking').value.trim();9
     // const duration = document.querySelector('#sessionduration-booking').value.trim();
     // const type = document.querySelector('#sessiontype-booking').value.trim();
   

@@ -77,6 +77,7 @@ router.get('/profile/:id', async (req, res) => {
     //   // },
 
     // },);
+   
 
     const coachData = await Coach.findOne({ where: { id: req.params.id } },
       // {
@@ -93,7 +94,8 @@ router.get('/profile/:id', async (req, res) => {
       res.render('profile', {
         booking1,
         coach1,
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        coachId: req.params.id
       });
  
   } catch (err) {

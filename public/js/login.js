@@ -20,11 +20,15 @@ const loginFormHandler = async (event) => {
      
    // const users = response.map((project) => project.get({ plain: true }));
     //localStorage.setItem("coachId", JSON.stringify(data.id));
-  
+     console.log(event);
     if (response.ok) {
       const data = await response.json();
       //console.log(data)
-      document.location.replace(`/profile/${data.id}`);
+     document.location.replace(`/profile/${data.id}`);
+      // event.render(`/profile/${data.id}`, {
+      //   logged_in: true,
+      //   coachId: `${data.id}`
+      // });
     } else {
       alert(response.statusText);
     }
