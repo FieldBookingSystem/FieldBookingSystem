@@ -10,7 +10,9 @@
              <p class="pure-u-md-14-24 profile">Team Name: {{booking.team_name}}</p>   
              <p class="pure-u-md-14-24 profile">Date: {{booking.date}}</p>  
              <p class="pure-u-md-14-24 profile">Time Slot: {{booking.time_slot}}</p> 
+            <p class="pure-u-md-14-24 profile"> <a class="dropdown-item" href="/api/booking/delete/{{booking.id}}">Delete</a></p>
            <button class="btn" data-fieldid="{{booking.id}}">Delete</button>
+            
             {{!-- <p class="pure-u-md-14-24">Unique Field id: {{field.id}}</p> 
             <div class="bookingBtn"> Book This Field </div>      --}}
     </div>

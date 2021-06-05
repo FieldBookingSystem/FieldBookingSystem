@@ -9,10 +9,10 @@ let removeBooking;
  
 const delBooking = async (event) => {
   let remove = $(this).data('fieldid');
-  removeBooking = remove
-  console.log(removeBooking);
+ // removeBooking = remove
+  console.log(remove);
 
-  const response = await fetch(`/api/booking/${removebooking}`, {
+  const response = await fetch(`/api/booking/${remove}`, {
     method: 'DELETE',
   });
   if (response.ok) {

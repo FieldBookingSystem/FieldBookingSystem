@@ -32,15 +32,17 @@ router.post('/', async (req, res) => {
   try {
     console.log("New Booking: ")
     const newBooking = await Booking.create({
-      field_id: req.body.field_id,
-      team_name: req.body.team_name,
+      field_id: req.body.field,
+      team_name: req.body.team,
       date: req.body.date,
-      time_slot: req.body.time_slot,
-      coach_id: req.body.coach_id,
+      time_slot: req.body.time,
+      coach_id: req.body.coachId1,
     });
-    console.log("newBooking".newBooking)
+
+     console.log("newBooking".newBooking)
     res.status(200).json(newBooking);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });

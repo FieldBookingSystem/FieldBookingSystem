@@ -25,7 +25,8 @@ router.get('/', async (req, res) => {
 router.get('/booking', async (req, res) => {
   try {
   //  Pass serialized data and session flag into template
-    res.render('booking');
+    console.log(req.session)
+    res.render('booking', {id: req.session.userid});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -116,7 +117,26 @@ router.get('/profile/:id', async (req, res) => {
 
 
 
+router.get('/delete/:id', async (req, res) => {
+  console.log(req.params.id);
+  try {
+    
+    const response = await fetch(`/api/booking/${req.params.id}`, {
+      method: 'DELETE',
+    });
 
+    if (response.ok) {
+      console.log("I home this works")
+    } else {
+      console.log("It didn't work")
+    }
+
+  } catch (err) {
+  
+    res.status(500).json(err);
+  }
+
+});
 
 
 
