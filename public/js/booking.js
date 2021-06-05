@@ -13,31 +13,16 @@ $("button").click(function() {
     // console.log(field)
 });
 
-<<<<<<< HEAD
 
-const bookingFormHandler = async (event) => {
-    event.preventDefault();
-  
-    let field = JSON.parse(localStorage.getItem("fieldId"))
-    const team = document.querySelector('#team-booking').value.trim();
-    const date = document.querySelector('#date-booking').value.trim();
-    const time = document.querySelector('#timeslot-booking').value.trim();
-    // const duration = document.querySelector('#sessionduration-booking').value.trim();
-    // const type = document.querySelector('#sessiontype-booking').value.trim();
-=======
 // const bookingFormHandler = async (event) => {
-//    // event.preventDefault();
-//     let coachId1 = '<%= Session["coachId"] %>';
-   
-//     console.log(coachId1);
-//     coachId1 = 7;
+//     event.preventDefault();
+  
 //     let field = JSON.parse(localStorage.getItem("fieldId"))
 //     const team = document.querySelector('#team-booking').value.trim();
 //     const date = document.querySelector('#date-booking').value.trim();
-//     const time = document.querySelector('#timeslot-booking').value.trim();9
-//     // const duration = document.querySelector('#sessionduration-booking').value.trim();
-//     // const type = document.querySelector('#sessiontype-booking').value.trim();
->>>>>>> 269759c5f8059d659c5fc39326a412b8ee69c121
+//     const time = document.querySelector('#timeslot-booking').value.trim();
+    // const duration = document.querySelector('#sessionduration-booking').value.trim();
+    // const type = document.querySelector('#sessiontype-booking').value.trim();
   
 //     if (team && date && time) {
 //       const response = await fetch('/api/booking', {

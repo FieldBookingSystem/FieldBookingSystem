@@ -3,9 +3,8 @@ const j = document.getElementById("bookform");
 
 const bookingFormHandler = async (event) => {
     // event.preventDefault();
-     let coachId1 = '<%= Session["coachId"] %>';
-    
-     console.log(coachId1);
+    //  let coachId1 = Session["coachId"];
+    //  console.log(coachId1);
      coachId1 = 7;
      let field = JSON.parse(localStorage.getItem("fieldId"))
      const team = document.querySelector('#team-booking').value.trim();
