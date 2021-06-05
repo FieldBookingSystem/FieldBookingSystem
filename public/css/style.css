@@ -40,10 +40,10 @@ div {
     color: white;
 }
 
-div:hover {
+/* div:hover {
     color: #213525;
-    background-color: rgb(255, 255, 255); 
-}
+    background-color: rgb(255, 255, 255);  
+}*/
 
 @media screen and (max-width: 750px) {
     div {
