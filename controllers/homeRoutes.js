@@ -77,16 +77,25 @@ router.get('/profile/:id', async (req, res) => {
     //   // },
 
     // },);
-   
-
-    const coachData = await Coach.findOne({ where: { id: req.params.id } },
-      // {
-      //  include: [ {model: Fields,  attributes: ['name', 'address'], }],
-      // }
-    );
-   console.log(bookingData );
-    const coach1 = coachData.get({ plain: true });
     const booking1 = bookingData.map((data) => data.get({ plain: true }));
+
+
+    const coachData = await Coach.findOne({ where: { id: req.params.id } });
+   // console.log(bookingData );
+    const coach1 = coachData.get({ plain: true });
+    
+    const fieldsData = await Fields.findAll();
+    const fields1 = fieldsData.map((data) => data.get({ plain: true }));
+    console.log(fields1);
+
+    booking1.forEach( (book) => {
+          fields1.forEach ( (field)  => {
+            if (field.id === book.field_id){
+              book.fieldname = field.name;
+            }
+          });
+          
+    } );
 
 
    console.log(booking1);
