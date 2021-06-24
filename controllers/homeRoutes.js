@@ -119,6 +119,7 @@ router.get('/profile/:id', async (req, res) => {
 
 router.get('/delete/:id', async (req, res) => {
   console.log(req.params.id);
+  console.log(`/api/booking/${req.params.id}`);
   try {
     
     const response = await fetch(`/api/booking/${req.params.id}`, {
@@ -127,6 +128,8 @@ router.get('/delete/:id', async (req, res) => {
 
     if (response.ok) {
       console.log("I home this works")
+      document.location.reload();
+     // document.location.replace(`/profile/${req.session.userid}`);
     } else {
       console.log("It didn't work")
     }

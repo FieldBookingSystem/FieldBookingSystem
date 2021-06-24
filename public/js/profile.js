@@ -13,7 +13,7 @@ const delBooking = async (event) => {
   console.log(remove);
 
   const response = await fetch(`/api/booking/${remove}`, {
-    method: 'DELETE',
+    method: 'DELETE'
   });
   if (response.ok) {
     console.log("I home this works")
